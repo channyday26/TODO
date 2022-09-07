@@ -22,3 +22,4 @@ use Inertia\Inertia;
 
 Route::get('/', [UserController::class,'index']);
 Route::get('/create', [UserController::class,'create']);
+Route::post('/save', [UserController::class,'store']);

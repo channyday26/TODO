@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
+use Session;
 
 
 class UserController extends Controller
@@ -17,8 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
-        // $tasks = User::all();
+  
         $tasks = DB::table('todo')->get();
         return Inertia::render('User', ['todo' => $tasks]);
     }
@@ -43,6 +43,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $task = new user();
+        $data = array(
+            'task' => $request -> input('task')
+        );
+
+        $task -> create($data);
+        Session::flash('success','User created successfully');
+        return redirect('/');
     }
 
     /**
