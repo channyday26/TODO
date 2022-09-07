@@ -14,7 +14,7 @@ const User = ({ todo }) => {
                     <tbody>
                         {todo.map((todo) => (
                             <tr>
-                                <td width="12%">
+                                <td width="100px">
                                     <InertiaLink href="/" className="btn btn-primary btn-sm">
                                         done
                                     </InertiaLink>

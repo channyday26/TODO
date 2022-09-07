@@ -19,7 +19,7 @@ const Create = () => {
                             <tr>
                                 <th colspan="2">
                                     Add New Task
-                                    <button className="btn btn-primary btn-sm">Add</button>
+                                    <button className="btn btn-primary btn-sm" id="btnNew">Add</button>
                                     <InertiaLink href="/" className="btn btn-danger btn-sm">Cancel</InertiaLink>
                                 </th>
                             </tr>
@@ -27,7 +27,6 @@ const Create = () => {
                         <tbody>
                             <tr>
                               <td> 
-                                {/* <input type="text" className="form-control" name="task" id="task" value={task} onChange={(e)=>setTask(e.target.value)}/> */}
                                 <textarea name="" id="" cols="30" rows="10" className="form-control" value={task} onChange={(e)=>setTask(e.target.value)} ></textarea>
                               </td>
                             </tr>
