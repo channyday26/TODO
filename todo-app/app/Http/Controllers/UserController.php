@@ -49,7 +49,7 @@ class UserController extends Controller
         );
 
         $task -> create($data);
-        Session::flash('success','User created successfully');
+        Session::flash('success','Task created successfully');
         return redirect('/');
     }
 
@@ -85,7 +85,11 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tasks = User::findOrFail($id);
+        $tasks -> task = $request->input('task');
+        $tasks->save();
+        Session::flash('success','Task updated created successfully');
+        return redirect('/');
     }
 
     /**
@@ -96,6 +100,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        $tasks = User::findOrFail($id);
+        $tasks -> delete();
+        Session::flash('success','Task deleted created successfully');
+        return redirect('/');
         //
     }
 }

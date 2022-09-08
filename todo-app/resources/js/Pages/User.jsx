@@ -1,22 +1,27 @@
 import { InertiaLink } from '@inertiajs/inertia-react';
 import React, { Fragment } from 'react';
+import { AiFillDelete } from 'react-icons/fa';
 
-const User = ({ todo }) => {
+const User = ({ success, todo }) => {
     return (
         <Fragment>
             <div className="main-div">
                 <table className="main-table">
                     <thead>
                         <tr>
-                            <th colspan="2">Simple To Do App <InertiaLink href="/create" id="btn-new" className="btn btn-primary btn-sm">new</InertiaLink></th>
+                            <th colspan="2">
+                                Simple To Do App 
+                                <InertiaLink href="/create" id="btn-new" className="btn btn-primary btn-sm">new</InertiaLink>
+                                {success && <div className="alert alert-success">{success}</div>}
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         {todo.map((todo) => (
                             <tr>
-                                <td width="100px">
-                                    <InertiaLink href="/" className="btn btn-primary btn-sm">
-                                        done
+                                <td width="110px">
+                                    <InertiaLink href={`/delete/${todo.id}`} className="btn btn-danger btn-sm">
+                                        <AiFillDelete />
                                     </InertiaLink>
                                     <InertiaLink href={`/edit/${todo.id}`} className="btn btn-primary btn-sm">
                                         edit

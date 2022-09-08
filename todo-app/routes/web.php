@@ -24,3 +24,5 @@ Route::get('/', [UserController::class,'index']);
 Route::get('/create', [UserController::class,'create']);
 Route::post('/save', [UserController::class,'store']);
 Route::get('/edit/{id}', [UserController::class,'edit']);
+Route::post('/update/{id}', [UserController::class,'update']);
+Route::get('/delete/{id}', [UserController::class,'destroy']);

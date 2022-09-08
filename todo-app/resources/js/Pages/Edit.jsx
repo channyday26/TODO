@@ -1,8 +1,9 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { InertiaLink } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
 
 const Edit = ({todo}) => {
-    const [tasks, setTask] = useState("");
+    const [task, setTask] = useState("");
 
     useEffect(() =>{
         setTask(todo.task);
@@ -10,9 +11,9 @@ const Edit = ({todo}) => {
 
     const updateData = (e) => {
         e.preventDefault();
+        Inertia.post(`/update/${todo.id}`,{task});
     };
 
-    // console.log({tasks});
 
     return (
         <Fragment>
@@ -31,9 +32,8 @@ const Edit = ({todo}) => {
                         <tbody>
                             <tr>
                               <td> 
-                                {/* <textarea name="" id="" cols="30" rows="10" className="form-control"></textarea> */}
-                                <textarea name="" id="" cols="30" rows="10" className="form-control" 
-                                value={tasks} 
+                                <textarea name="" id="task" cols="30" rows="10" className="form-control" 
+                                value={task} 
                                 onChange={(e)=>setTask(e.target.value)} ></textarea>
                               </td>
                             </tr>
