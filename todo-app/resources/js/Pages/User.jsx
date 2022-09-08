@@ -1,6 +1,6 @@
 import { InertiaLink } from '@inertiajs/inertia-react';
 import React, { Fragment } from 'react';
-import { AiFillDelete } from 'react-icons/fa';
+import { ImBin } from 'react-icons/im';
 
 const User = ({ success, todo }) => {
     return (
@@ -21,7 +21,7 @@ const User = ({ success, todo }) => {
                             <tr>
                                 <td width="110px">
                                     <InertiaLink href={`/delete/${todo.id}`} className="btn btn-danger btn-sm">
-                                        <AiFillDelete />
+                                        <ImBin />
                                     </InertiaLink>
                                     <InertiaLink href={`/edit/${todo.id}`} className="btn btn-primary btn-sm">
                                         edit
