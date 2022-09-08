@@ -18,7 +18,7 @@ const User = ({ todo }) => {
                                     <InertiaLink href="/" className="btn btn-primary btn-sm">
                                         done
                                     </InertiaLink>
-                                    <InertiaLink href="/" className="btn btn-primary btn-sm">
+                                    <InertiaLink href={`/edit/${todo.id}`} className="btn btn-primary btn-sm">
                                         edit
                                     </InertiaLink>
                                 </td>

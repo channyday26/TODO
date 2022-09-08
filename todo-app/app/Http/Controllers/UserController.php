@@ -72,7 +72,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tasks = User::find($id); 
+        return Inertia::render('Edit', ['todo' => $tasks]);
     }
 
     /**
