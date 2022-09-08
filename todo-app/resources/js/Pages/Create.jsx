@@ -1,6 +1,9 @@
 import React, { useState, Fragment } from "react";
 import { Inertia } from "@inertiajs/inertia";
-import { InertiaLink } from "@inertiajs/inertia-react";
+import { InertiaLink, Link  } from "@inertiajs/inertia-react";
+import { MdOutlineCancel } from 'react-icons/md';
+import { MdCheckCircleOutline } from 'react-icons/md';
+
 
 const Create = () => {
     const [task, setTask] = useState("");
@@ -19,8 +22,8 @@ const Create = () => {
                             <tr>
                                 <th colspan="2">
                                     Add New Task
-                                    <button className="btn btn-primary btn-sm" id="btnNew">Add</button>
-                                    <InertiaLink href="/" className="btn btn-danger btn-sm">Cancel</InertiaLink>
+                                    <button className="btn-button_success" id="btn-new"><MdCheckCircleOutline/></button>
+                                    <InertiaLink href="/" className="btn-button_danger"  id="btn-new"><MdOutlineCancel/></InertiaLink>
                                 </th>
                             </tr>
                         </thead>

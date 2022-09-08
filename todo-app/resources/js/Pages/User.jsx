@@ -1,6 +1,9 @@
 import { InertiaLink } from '@inertiajs/inertia-react';
 import React, { Fragment } from 'react';
-import { ImBin } from 'react-icons/im';
+import { BsTrash } from 'react-icons/bs';
+import { TbEdit } from 'react-icons/tb';
+import { AiOutlinePlusCircle } from 'react-icons/ai';
+
 
 const User = ({ success, todo }) => {
     return (
@@ -9,9 +12,9 @@ const User = ({ success, todo }) => {
                 <table className="main-table">
                     <thead>
                         <tr>
-                            <th colspan="2">
+                            <th colSpan="2">
                                 Simple To Do App 
-                                <InertiaLink href="/create" id="btn-new" className="btn btn-primary btn-sm">new</InertiaLink>
+                                <InertiaLink href="/create" id="btn-new" className="btn-button_default"><AiOutlinePlusCircle/></InertiaLink>
                                 {success && <div className="alert alert-success">{success}</div>}
                             </th>
                         </tr>
@@ -19,12 +22,12 @@ const User = ({ success, todo }) => {
                     <tbody>
                         {todo.map((todo) => (
                             <tr>
-                                <td width="110px">
-                                    <InertiaLink href={`/delete/${todo.id}`} className="btn btn-danger btn-sm">
-                                        <ImBin />
+                                <td width="40px">
+                                    <InertiaLink href={`/delete/${todo.id}`} className="btn-button_danger">
+                                        <BsTrash />
                                     </InertiaLink>
-                                    <InertiaLink href={`/edit/${todo.id}`} className="btn btn-primary btn-sm">
-                                        edit
+                                    <InertiaLink href={`/edit/${todo.id}`} className="btn-button_primary">
+                                        <TbEdit />
                                     </InertiaLink>
                                 </td>
                                 <td>

@@ -9,6 +9,46 @@ body{
     border-radius: 9px;
 }
 
+button {
+    background-color:transparent;
+    border: none;
+}
+
+.btn-button {
+    margin-right: 3px;
+    text-decoration: none;
+    float: right;
+
+    &_danger{
+        color: #c56f6f;
+        :hover{
+            color: #ff0000;
+        }
+    }
+
+    &_primary{
+        color: #699dd8;
+        :hover{
+            color: #025ec7;
+        }
+    }
+
+    &_default{
+        color: #d8b569;
+        :hover{
+            color: #e69f06;
+        }
+    }
+
+    &_success{
+        color: #a2c46d;
+        :hover{
+            color: #74bb02;
+        }
+    }
+    
+}
+
 .main-table {
     width: 100%;
 
@@ -25,8 +65,5 @@ body{
             }
         }
     }
-
-    tbody {
-        tr>th {}
-    }
 }
+
