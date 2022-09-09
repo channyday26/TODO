@@ -56,10 +56,6 @@ button {
         font-size: 2rem;
 
         tr>th {
-            // display: flex;
-            // justify-content: space-between;
-            // align-items: center;
-
             #btn-new {
                 float: right;
             }
@@ -67,3 +63,7 @@ button {
     }
 }
 
+.strike{
+    text-decoration: line-through;
+    color: #00000086;
+}

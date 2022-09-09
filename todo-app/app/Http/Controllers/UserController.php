@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-  
+
         $tasks = DB::table('todo')->get();
         return Inertia::render('User', ['todo' => $tasks]);
     }
@@ -30,7 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+
         return Inertia::render('Create');
     }
 
@@ -89,6 +89,15 @@ class UserController extends Controller
         $tasks -> task = $request->input('task');
         $tasks->save();
         Session::flash('success','Task updated created successfully');
+        return redirect('/');
+    }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $tasks = User::findOrFail($id);
+        $tasks -> status = "done";
+        $tasks->save();
+        Session::flash('success','Task finished');
         return redirect('/');
     }
 

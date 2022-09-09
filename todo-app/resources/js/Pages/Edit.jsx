@@ -1,8 +1,11 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { InertiaLink } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
+import { MdOutlineCancel } from 'react-icons/md';
+import { MdCheckCircleOutline } from 'react-icons/md';
 
 const Edit = ({todo}) => {
+
     const [task, setTask] = useState("");
 
     useEffect(() =>{
@@ -14,7 +17,6 @@ const Edit = ({todo}) => {
         Inertia.post(`/update/${todo.id}`,{task});
     };
 
-
     return (
         <Fragment>
             <div className="main-div">
@@ -24,8 +26,8 @@ const Edit = ({todo}) => {
                             <tr>
                                 <th colspan="2">
                                     Edit Task
-                                    <button className="btn btn-primary btn-sm">Update</button>
-                                    <InertiaLink href="/" className="btn btn-danger btn-sm">Cancel</InertiaLink>
+                                    <button id="btn-new" className="btn-button_success"><MdCheckCircleOutline/></button>
+                                    <InertiaLink href="/" id="btn-new" className="btn-button_danger"><MdOutlineCancel/></InertiaLink>
                                 </th>
                             </tr>
                         </thead>
