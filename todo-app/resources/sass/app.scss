@@ -1,5 +1,5 @@
 body{
-    background-color: #b6a67b;
+    background-color: #c7b993;
 }
 
 .main-div {
@@ -7,6 +7,9 @@ body{
     margin: 1rem;
     padding: 1.5rem;
     border-radius: 9px;
+    -webkit-box-shadow: 0px 0px 30px -11px rgba(0,0,0,0.53);
+    -moz-box-shadow: 0px 0px 30px -11px rgba(0,0,0,0.53);
+    box-shadow: 0px 0px 30px -11px rgba(0,0,0,0.53);
 }
 
 button {
@@ -15,9 +18,8 @@ button {
 }
 
 .btn-button {
-    margin-right: 3px;
+    margin-right: 6px;
     text-decoration: none;
-    float: right;
 
     &_danger{
         color: #c56f6f;
@@ -41,9 +43,9 @@ button {
     }
 
     &_success{
-        color: #a2c46d;
+        color: #93cf7b;
         :hover{
-            color: #74bb02;
+            color: #3c9619;
         }
     }
     
@@ -66,4 +68,5 @@ button {
 .strike{
     text-decoration: line-through;
     color: #00000086;
+    font-style: italic;
 }

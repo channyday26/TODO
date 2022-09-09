@@ -10,6 +10,7 @@ const Create = () => {
 
     const saveData = (e) => {
         e.preventDefault();
+        
         Inertia.post("/save", {task});
     };
 

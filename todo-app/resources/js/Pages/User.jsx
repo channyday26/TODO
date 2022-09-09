@@ -20,14 +20,14 @@ const User = ({ success, todo }) => {
 
         return (
             <tr>
-                <td width="50px">
-                    <InertiaLink href={`/delete/${id}`} className="btn-button_danger">
+                <td width="70px">
+                    <InertiaLink href={`/delete/${id}`} className="btn-button btn-button_danger">
                         <BsTrash />
                     </InertiaLink>
-                    <InertiaLink href={`/edit/${id}`} className="btn-button_primary">
+                    <InertiaLink href={`/edit/${id}`} className="btn-button btn-button_primary">
                         <TbEdit />
                     </InertiaLink>
-                    <InertiaLink href={`/updateStatus/${id}`} className="btn-button_success">
+                    <InertiaLink href={`/updateStatus/${id}`} className="btn-button btn-button_success">
                         <MdDownloadDone />
                     </InertiaLink>
                 </td>
